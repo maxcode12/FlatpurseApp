@@ -1,9 +1,93 @@
-﻿@page "/login"
-<div class="login">
-    <div class="top"> <MudImage Fluid="true" Src="images/FlatPurse-Logomark-pngwhite.png"  Alt="Flatpurse ad"  /> </div>
+﻿@layout FlatpurseApp.Client.Shared.AccountLayout
 
-</div>
+@page "/login"
+
+@using System.Text.RegularExpressions
+@using System.ComponentModel.DataAnnotations
+<link href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" rel="stylesheet">
+
+<br />
+<BreadcrumbLink></BreadcrumbLink>
+<MudGrid Class="mt-5">
+    <MudItem xs="12" sm="3">
+    </MudItem>
+    <MudItem xs="12" sm="6">
+        <MudPaper Class="pa-4">
+            <MudForm @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
+                <div style="text-align:center;font-size:30px">
+                    <MudIcon Icon="@Icons.Filled.SupervisedUserCircle" Style="font-size:30px" Class="mb-5" Color="Color.Primary" />
+                </div>
+                <MudText Typo="Typo.h5" Class="mb-5" Align="Align.Center" Color="Color.Primary">WELCOME BACK</MudText>
+                <MudTextField @bind-Value="Email" Class="mt-5" Label="Email" RequiredError="Email is required!"
+                              Validation="@(new EmailAddressAttribute() {ErrorMessage = "The email address is invalid"})" Variant="Variant.Outlined" />
+
+                <MudTextField @bind-Value="Pass" Required="true"
+                              RequiredError="Password is required!" InputType="@PasswordInput" Variant="Variant.Outlined" Class="mt-5 mb-3" Label="Password" c Adornment="Adornment.End" AdornmentIcon="@PasswordInputIcon" OnAdornmentClick="ButtonTestclick" AdornmentAriaLabel="Show Password" />
+
+                <div class="d-flex align-center justify-space-between">
+                    <MudCheckBox T="bool" Required="true" RequiredError="You must agree" Label="Remember me!" />
+                    <MudButton Disabled="@_processing"  href="index" EndIcon="@Icons.Material.Filled.Send" Class="ml-auto" OnClick="ProcessSomething" Variant="Variant.Filled" Color="Color.Primary">
+                        @if (_processing)
+                        {
+                            <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                            <MudText Class="ms-2">Processing</MudText>
+                        }
+                        else
+                        {
+                            <MudText>LOGIN</MudText>
+                        }
+                    </MudButton>
+@*                    <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Login</MudButton>
+*@                </div>
+                <hr />
+                <div style="text-align:center" class="mt-5">
+                    <MudLink Href="forgotPass">Forgot Password?</MudLink>
+                </div>
+            </MudForm>
+        </MudPaper>
+        @*   <MudPaper Class="pa-4 mt-4">
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" DisableElevation="true" OnClick="@(()=>form.Validate())">Validate</MudButton>
+        <MudButton Variant="Variant.Filled" Color="Color.Secondary" DisableElevation="true" OnClick="@(()=>form.Reset())" Class="mx-2">Reset</MudButton>
+        <MudButton Variant="Variant.Filled" DisableElevation="true" OnClick="@(()=>form.ResetValidation())">Reset Validation</MudButton>
+        </MudPaper>*@
+    </MudItem>
+    <MudItem xs="12" sm="3">
+    </MudItem>
+</MudGrid>
+
 
 @code {
+    bool success;
+    string[] errors = { };
+    MudTextField<string> pwField1;
+    MudForm form;
+    public string Email { get; set; }
+    public string Pass { get; set; }
+    bool isShow;
+    InputType PasswordInput = InputType.Password;
+    string PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
 
+    void ButtonTestclick()
+    {
+        @if (isShow)
+        {
+            isShow = false;
+            PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+            PasswordInput = InputType.Password;
+        }
+        else
+        {
+            isShow = true;
+            PasswordInputIcon = Icons.Material.Filled.Visibility;
+            PasswordInput = InputType.Text;
+        }
+    }
+    private bool _processing = false;
+
+    async Task ProcessSomething()
+    {
+        _processing = true;
+        await Task.Delay(4000);
+        _processing = false;
+    }
 }
