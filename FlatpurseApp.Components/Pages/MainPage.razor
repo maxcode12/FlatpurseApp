@@ -1,0 +1,111 @@
+﻿@page "/mainpage"
+@layout FlatpurseApp.Components.Shared.MainLayout
+<div class="m-0">
+    <div class="container"> 
+        <MudGrid>
+  
+            <MudItem xs="6" sm="3">
+                
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+                    <MudNavLink Icon="fas fa-chart-line" Href="dashboard"> Dashboard</MudNavLink>
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="6" sm="3">
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8"> 
+                    <MudNavLink Icon="@Icons.Filled.People" Href="management"> User Management </MudNavLink>
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="6" sm="3">
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+                  
+                    <MudNavLink Icon="@Icons.Filled.Contacts" Href="contact"> Contacts</MudNavLink>
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="6" sm="3">
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+                    <MudNavLink Icon="@Icons.Filled.Inventory" Href="product"> Products</MudNavLink>
+                </MudPaper>
+            </MudItem>
+
+
+            <MudItem xs="6" sm="3">
+
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+                    <MudNavLink Icon="@Icons.Filled.ArrowDownward" Href="purchase">  Purchases </MudNavLink>
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="6" sm="3">
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+                   
+                    <MudNavLink Icon="@Icons.Filled.Sell" Href="sell"> Sell</MudNavLink>
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="6" sm="3">
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+                    
+                    <MudNavLink Icon="@Icons.Filled.LocalShipping" Href="transfer"> Stock Transfers</MudNavLink>
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="6" sm="3">
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+                   
+                    <MudNavLink Icon="@Icons.Filled.DataUsage" Href="adjustment">Stock Adjustment</MudNavLink>
+                </MudPaper>
+            </MudItem>
+
+            <MudItem xs="6" sm="3">
+
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+                    
+                    <MudNavLink Icon="@Icons.Filled.Dangerous" Href="expense">  Expenses </MudNavLink>
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="6" sm="3">
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+                    
+                    <MudNavLink Icon="@Icons.Filled.Report" Href="report"> Reports</MudNavLink>
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="6" sm="3">
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+                    <MudNavLink Icon="@Icons.Filled.Mail" Href="nortify"> Nortification Templates</MudNavLink>
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="6" sm="3">
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+                    <MudNavLink Icon="@Icons.Filled.Settings" Href="setting">Settings</MudNavLink>
+                </MudPaper>
+            </MudItem>
+
+
+
+            <MudItem xs="6" sm="3">
+
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+
+                    <MudNavLink Icon="@Icons.Filled.DataSaverOn" Href="adminbackup">  Administer Backup </MudNavLink>
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="6" sm="3">
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+
+                    <MudNavLink Icon="@Icons.Filled.PeopleOutline" Href="report"> HRM</MudNavLink>
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="6" sm="3">
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+                    <MudNavLink Icon="@Icons.Filled.ViewModule" Href="module"> Modules</MudNavLink>
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="6" sm="3">
+                <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+                    <MudNavLink Icon="@Icons.Filled.MarkChatRead" Href="essential">Essential</MudNavLink>
+                </MudPaper>
+            </MudItem>
+
+        </MudGrid>
+    </div>
+</div>
+@code {
+
+}

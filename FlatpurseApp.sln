@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlatpurseApp.Server", "FlatpurseApp\Server\FlatpurseApp.Server.csproj", "{084CB542-1816-4917-AEB7-4237DBDC5372}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlatpurseApp.Server", "FlatpurseApp\Server\FlatpurseApp.Server.csproj", "{084CB542-1816-4917-AEB7-4237DBDC5372}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlatpurseApp.Client", "FlatpurseApp\Client\FlatpurseApp.Client.csproj", "{B2127EA0-1A29-4303-A5EC-C8E40045B7B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlatpurseApp.Client", "FlatpurseApp\Client\FlatpurseApp.Client.csproj", "{B2127EA0-1A29-4303-A5EC-C8E40045B7B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlatpurseApp.Shared", "FlatpurseApp\Shared\FlatpurseApp.Shared.csproj", "{E4DC4964-2785-4832-B759-E95C0B774363}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlatpurseApp.Shared", "FlatpurseApp\Shared\FlatpurseApp.Shared.csproj", "{E4DC4964-2785-4832-B759-E95C0B774363}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlatpurseApp.Components", "FlatpurseApp.Components\FlatpurseApp.Components.csproj", "{94BAC0EA-482A-45D1-AFC9-605D43AC2288}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{E4DC4964-2785-4832-B759-E95C0B774363}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4DC4964-2785-4832-B759-E95C0B774363}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4DC4964-2785-4832-B759-E95C0B774363}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94BAC0EA-482A-45D1-AFC9-605D43AC2288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94BAC0EA-482A-45D1-AFC9-605D43AC2288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94BAC0EA-482A-45D1-AFC9-605D43AC2288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94BAC0EA-482A-45D1-AFC9-605D43AC2288}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

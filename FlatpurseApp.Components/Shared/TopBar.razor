@@ -1,0 +1,37 @@
+﻿
+    <MudImage Src="images/flatpurse-logomark-pngwhite-small.png" />
+    <MudText Typo="Typo.h5" Class="ml-3">Flatpurse Systems</MudText>
+    <MudSpacer />
+    <MudTooltip Text="Add" Placement="Placement.Bottom">
+        <MudIconButton Title="Add" Icon="@Icons.Material.Outlined.AddBox" Color="Color.Inherit"  />
+    </MudTooltip>
+    <MudTooltip Text="Calculator" Placement="Placement.Bottom"> 
+         <MudIconButton Title="Calculator" Icon="@Icons.Custom.Brands.Calculator" Color="Color.Inherit" />
+    </MudTooltip>  
+    <MudTooltip Text="POS" Placement="Placement.Bottom">
+        <MudIconButton Title="POS" Icon="@Icons.Custom.Brands.Microsoft" Color="Color.Inherit" />
+    </MudTooltip>
+    <MudTooltip Text="Today's Profit'" Placement="Placement.Bottom"> 
+        <MudIconButton Title="Today's Profit" Icon="@Icons.Sharp.Payments" Color="Color.Inherit" />
+    </MudTooltip>
+    <span style="padding-right">@DateTime.Now.ToString("dd-mm-yyyy")  </span>
+  
+<div class="d-flex align-center">
+   
+    <MudMenu Icon="@Icons.Material.Outlined.MoreVert"
+     Color="Color.Inherit"  Class="mx-2">
+        <ChildContent>
+            <MudMenuItem>Profile</MudMenuItem>
+            <MudMenuItem>Theme</MudMenuItem>
+            <MudMenuItem>Usage</MudMenuItem>
+            <MudMenuItem>Sign Out</MudMenuItem>
+        </ChildContent>
+    </MudMenu>
+ 
+</div>
+
+@code {
+
+    MudTheme Theme = new MudTheme();
+}
+

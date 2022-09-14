@@ -1,0 +1,102 @@
+﻿@layout FlatpurseApp.Components.Shared.AccountLayout
+
+@page "/login"
+
+@using System.Text.RegularExpressions
+@using System.ComponentModel.DataAnnotations
+
+
+<div class="col-lg-4 col-sm-12 col-12">
+    <div class=" container"> 
+        <div class="card py2">
+            <div class="card-body text-xl-center">
+                <MudForm @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
+                    <div class="form-group top-logo ">
+                        <MudText Typo="Typo.h5" Class="mb-lg-5 mb-sm-3 "> Welcome to </MudText>                     
+                        <MudImage Style="align:center"  Src="images/Flatpurse_logo.png" />
+                    </div>
+
+                    <div class="form-group"> 
+                        <div class="input-group mb-3">
+                            
+                            <MudTextField T="string" Label="Username" Required="true"
+                                c Adornment="Adornment.Start" AdornmentIcon="@UsernameLabelIcon"/>
+                        </div>
+                    </div>
+                    <div class="form-group"> 
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><MudIcon Icon="@Icons.Material.Filled.Password" /></span>
+                            <MudTextField T="string"  Label="Password" Required="true" RequiredError="Password is required!" InputType="@PasswordInput"
+                                          c Adornment="Adornment.End"   AdornmentIcon="@PasswordInputIcon" OnAdornmentClick="ButtonTestclick" AdornmentAriaLabel="Show Password" />
+                            
+                        </div>
+                    </div>
+                    <div class=" text-xl-center ">
+                        <div class="input-group mb-3">
+                            <MudCheckBox Checked="true" Label="Remember my username and password" />
+                    
+                        </div>
+                    </div>
+                   <MudButton Disabled="@_processing"  href="mainpage" EndIcon="@Icons.Material.Filled.Send" Class="ml-auto" OnClick="ProcessSomething" Variant="Variant.Filled" Color="Color.Primary">
+                        @if (_processing)
+                        {
+                            <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                            <MudText Class="ms-2">Processing</MudText>
+                        }
+                        else
+                        {
+                            <MudText>LOGIN</MudText>
+                        }
+                    </MudButton>
+                  
+                    <div class="form-group">
+                        <hr />
+                        <div  class="mt-5">
+                            <a Href="forgotPass">
+                                Forgot Password?</a>
+                        </div>
+                    </div>
+                </MudForm>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+    bool success;
+    string[] errors = { };
+    MudTextField<string> pwField1;
+    MudForm? form;
+    public string Email { get; set; }
+    public string Pass { get; set; }
+    bool isShow;
+    InputType PasswordInput = InputType.Password;
+    string PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+    string UsernameLabelIcon = Icons.Material.Filled.Person;
+    
+    void ButtonTestclick()
+    {
+        @if (isShow)
+        {
+            isShow = false;
+            PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+            PasswordInput = InputType.Password;
+        }
+        else
+        {
+            isShow = true;
+            PasswordInputIcon = Icons.Material.Filled.Visibility;
+            PasswordInput = InputType.Text;
+        }
+    }
+    private bool _processing = false;
+
+    async Task ProcessSomething()
+    {
+        _processing = true;
+        await Task.Delay(4000);
+        _processing = false;
+    }
+}
